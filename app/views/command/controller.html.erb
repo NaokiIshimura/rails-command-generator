@@ -1,0 +1,49 @@
+<h1>Controller</h1>
+
+<hr>
+
+
+<%= form_with url: '/controller/generate' do |form| %>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :controller_name, 'Controller', class: 'form-label' %>
+      </div>
+      <div class="col-sm-5">
+        <%= form.text_field :controller_name, value: '', placeholder: 'Name', class: 'form-control' %>
+      </div>
+    </div>
+
+    <% 5.times do |i| %>
+
+        <div class="form-group row">
+          <div class="col-sm-2">
+            <%= form.label "action_label_#{i+1}", "Action#{i+1}", class: 'form-label' %>
+          </div>
+          <div class="col-sm-5">
+            <%= form.text_field "action_name_#{i+1}", value: '', placeholder: 'Name', class: 'form-control' %>
+          </div>
+          <div class="col-sm-5">
+          </div>
+        </div>
+
+    <% end %>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.submit 'Generate', class: 'btn btn-primary' %>
+      </div>
+      <div class="col-sm-5">
+      </div>
+      <div class="col-sm-5">
+      </div>
+    </div>
+
+<% end %>
+
+<hr>
+
+<div class="module_code">▼ Command</div>
+<pre class="prettyprint" id="command">
+$ rails g controller ...
+</pre>

@@ -1,0 +1,64 @@
+<h1>Scaffold</h1>
+
+<hr>
+
+<%= form_with url: '/scaffold/generate' do |form| %>
+
+    <% @select = [
+        ['binary'],
+        ['boolean'],
+        ['date'],
+        ['datetime'],
+        ['decimal'],
+        ['integer'],
+        ['float'],
+        ['primary_key'],
+        ['string'],
+        ['text'],
+        ['time'],
+        ['timestamp'],
+    ] %>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :model_name, 'Model', class: 'form-label' %>
+      </div>
+      <div class="col-sm-5">
+        <%= form.text_field :model_name, value: '', placeholder: 'Name', class: 'form-control' %>
+      </div>
+    </div>
+
+    <% 5.times do |i| %>
+
+        <div class="form-group row">
+          <div class="col-sm-2">
+            <%= form.label "column_label_#{i+1}", "Column#{i+1}", class: 'form-label' %>
+          </div>
+          <div class="col-sm-5">
+            <%= form.text_field "column_name_#{i+1}", value: '', placeholder: 'Name', class: 'form-control' %>
+          </div>
+          <div class="col-sm-5">
+            <%= form.select "column_type_#{i+1}", @select, {prompt: ''}, {class: 'form-control'} %>
+          </div>
+        </div>
+
+    <% end %>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.submit 'Generate', class: 'btn btn-primary' %>
+      </div>
+      <div class="col-sm-5">
+      </div>
+      <div class="col-sm-5">
+      </div>
+    </div>
+
+<% end %>
+
+<hr>
+
+<div class="module_code">▼ Command</div>
+<pre class="prettyprint" id="command">
+$ rails g scaffold ...
+</pre>
