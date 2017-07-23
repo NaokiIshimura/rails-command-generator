@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # bootstrap
 gem 'bootstrap-sass', '3.3.6'
+gem 'jquery-rails'
 
 # Heroku
 gem 'sqlite3', group: :development
