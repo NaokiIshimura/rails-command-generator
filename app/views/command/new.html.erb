@@ -1,0 +1,60 @@
+<h1>New</h1>
+
+<hr>
+
+<%= form_with url: '/new/generate' do |form| %>
+
+    <% @select = [
+        ['mysql'],
+        ['postgresql'],
+        ['sqlite3'],
+        ['oracle'],
+        ['frontbase'],
+        ['ibm_db'],
+        ['sqlserver'],
+        ['jdbcmysql'],
+        ['jdbcsqlite3'],
+        ['jdbcpostgresql'],
+        ['jdbc'],
+    ] %>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :name, 'App', class: 'form-label' %>
+      </div>
+      <div class="col-sm-5">
+        <%= form.text_field :name, value: '', placeholder: 'Name', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label "database", "option", class: 'form-label' %>
+      </div>
+      <div class="col-sm-2">
+        <%= form.check_box "database", class: '' %>
+        : database
+      </div>
+      <div class="col-sm-3">
+        <%= form.select "database_name", @select, {prompt: ''}, {class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.submit 'Generate', class: 'btn btn-primary' %>
+      </div>
+      <div class="col-sm-5">
+      </div>
+      <div class="col-sm-5">
+      </div>
+    </div>
+
+<% end %>
+
+<hr>
+
+<div class="module_code">▼ Command</div>
+<pre class="prettyprint" id="command">
+$ rails new ...
+</pre>
