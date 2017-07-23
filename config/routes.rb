@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  # new
+  get 'new' => 'command#new'
+  post 'new/generate' => 'command#new_generate'
+
   # controller
   get 'controller' => 'command#controller'
   post 'controller/generate' => 'command#controller_generate'

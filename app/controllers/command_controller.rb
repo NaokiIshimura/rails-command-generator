@@ -1,4 +1,23 @@
 class CommandController < ApplicationController
+
+  def new
+  end
+
+  def new_generate
+    @command = "$ rails new "
+
+    if params["name"].blank?
+      @command += "..."
+      return
+    else
+      @command += "#{params["name"]} "
+    end
+
+    if params["database"] == "1"
+      @command += "--database=#{params["database_name"]}"
+    end
+  end
+
   def controller
   end
 
