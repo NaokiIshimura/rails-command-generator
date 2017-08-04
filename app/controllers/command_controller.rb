@@ -3,6 +3,9 @@ class CommandController < ApplicationController
   def new
   end
 
+  def others
+  end
+
   def new_generate
     @command = "$ rails new "
 
