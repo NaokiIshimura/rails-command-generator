@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   # scaffold
   get 'scaffold' => 'command#scaffold'
   post 'scaffold/generate' => 'command#scaffold_generate'
+  
+  # others
+  get 'others' => 'command#others'
 end

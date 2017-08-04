@@ -1,0 +1,35 @@
+<h1>others</h1>
+
+<h4>server start</h4>
+<div class="module_code">▼ Command</div>
+<pre class="prettyprint">
+$ rails s
+$ rails s -e test
+$ rails s -e production
+</pre>
+
+<hr>
+
+<h4>db migration</h4>
+<div class="module_code">▼ Command</div>
+<pre class="prettyprint">
+$ rake db:migrate
+$ rake db:migrate RAILS_ENV=test
+$ rake db:migrate RAILS_ENV=production
+</pre>
+
+<hr>
+
+<h4>precompile</h4>
+<div class="module_code">▼ Command</div>
+<pre class="prettyprint">
+$ rake assets:precompile RAILS_ENV=production
+</pre>
+
+<hr>
+
+<h4>cache clear</h4>
+<div class="module_code">▼ Command</div>
+<pre class="prettyprint">
+$ rails r Rails.cache.clear
+</pre>
