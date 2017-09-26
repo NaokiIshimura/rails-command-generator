@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'config/sqlite3'
+
+  get 'config/mysql'
+
+  get 'config/postgresql'
+
   get 'command/controller'
   get 'command/scaffold'
   get 'home/index'
