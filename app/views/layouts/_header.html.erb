@@ -5,6 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "New", new_path %></li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Generate <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -13,6 +14,16 @@
             <li><%= link_to "Scaffold", scaffold_path %></li>
           </ul>
         </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Config <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "SQLite3", config_sqlite3_path %></li>
+            <li><%= link_to "MySQL", config_mysql_path %></li>
+            <li><%= link_to "PostgreSQL", config_postgresql_path %></li>
+          </ul>
+        </li>
+
         <li><%= link_to "Command", others_path %></li>
       </ul>
     </nav>
